@@ -1,0 +1,131 @@
+<!--
+    Powered By nodePPT - This is probably the best web presentation tool so far!
+    version: 0.9.8-5
+    site: https://github.com/ksky521/nodePPT
+-->
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>12Q解读 - By Peigen</title>
+    <link rel="stylesheet" media="all" href="./css/nodeppt.css">
+    <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="./css/phone.css">
+    <link rel="stylesheet" media="print" href="./css/pdf.css">
+    <link rel="stylesheet" href="./js/highlight/styles/monokai_sublime.css">
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/fontawesome/4.2.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="slides">
+    <slides id="container">
+        <slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>12Q</h1>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>我与公司的关系</h1>
+<p><img src="http://pic.yupoo.com/peigen123_v/Epx5fh1e/UaX40.jpg" alt=""></p>
+<h2>我知道公司对我的工作要求吗？</h2>
+<h2>公司的使命目标使我觉得我的工作重要吗？</h2>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>我与工作的关系</h1>
+<li>
+    <img src="http://pic.yupoo.com/peigen123_v/EpxbZEAo/14oF2t.png" alt="梅西打篮球"/>
+
+<img src="http://pic.yupoo.com/peigen123_v/EpxbZR62/TdWK9.png" alt="科比踢足球"/>
+</li>
+
+<h2>我有做好我的工作所需要的材料和设备吗？</h2>
+<h2>在工作中，我每天都有机会做我最擅长做的事吗？</h2>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>我与同事的关系</h1>
+<p><img src="http://pic.yupoo.com/peigen123_v/EpxbZG6p/vGFt0.png" alt="兄弟连"></p>
+<h2>我的同事们都在致力于高质量的工作吗？</h2>
+<h2>我在工作单位有一个最要好的朋友吗？</h2>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>我与主管的关系</h1>
+<h2>我觉得我的主管或同事关心我的个人情况？</h2>
+<h2>工作中，我觉得我的意见受到重视？</h2>
+<h2>在过去的一周，我因工作出色而受到表扬？</h2>
+<h2>在过去的六个月内，是否有人和我谈及我的进步？</h2>
+<h2>过去一年里，我在工作中有机会学习和成长？</h2>
+<h2>工作单位是否有人鼓励我的发展？</h2>
+
+</article></section></slide>
+        <!--slide class="slide thank-you-slide segue nobackground">
+            <article class="flexbox vleft auto-fadein">
+                <h2>Q &amp; A</h2>
+                <h3>&lt;Thank You!&gt;</h3>
+            </article>
+        </slide-->
+        <slide class="slide logoslide dark nobackground">
+            <article class="flexbox vcenter">
+              <h2 style="color: white;">Powered By nodePPT v0.9.8-5</h2>
+            </article>
+          </slide>
+        <div class="slideTip" id="tip"></div>
+    </slides>
+</div>
+<canvas id="drawBoard" class="draw-board" width="900" height="700"></canvas>
+<div class="progress"><span id="progress"></span></div>
+<div id="_buttons">
+    <div class="_btn-box" id="_btn-box" style="display:none;">
+        <button class="fa fa-arrow-circle-left" id="_btn-prev"></button>
+        <button class="fa fa-arrow-circle-right" id="_btn-next"></button>
+        <button class="fa fa-paint-brush" id="_btn-brush"></button>
+        <button class="fa fa-compress" id="_btn-overview" data-toggle="fa fa-expand"></button>
+    </div>
+    <button class="fa fa-bars" id="_btn-bar"  data-toggle="fa fa-close"></button>
+</div>
+<script src="./js/mixjs/lib/mix.0.3.0.min.js"></script>
+<script>
+var base = location.protocol + '//' + location.host;
+
+var path = location.pathname.split('/').filter(function(v){
+    return !!v;
+});
+path.pop();
+path = path.join('/');
+MixJS.config({
+    baseURL: [ base, path, 'js'].join('/')+'/'
+});
+
+</script>
+<script src="./js/mixjs/lib/event/broadcast.js"></script>
+<script src="./js/nodeppt.js"></script>
+<script>
+Slide.init({
+    containerID: 'container',
+    drawBoardID: 'drawBoard',
+    slideClass: '.slide',
+    buildClass: '.build',
+    progressID: 'progress',
+    transition: 'newspaper',
+    width: 1100,
+    dir: './',
+    
+    //打开下面的注释就开启postMessage方式
+    //访问网址127.0.0.1:8080/ppt/demo#client
+    control:{
+        type: 'postMessage',
+        args:{
+            isControl:  false
+        }
+    },
+    
+    tipID: 'tip'
+});
+MixJS.loadJS('highlight/hljs-0.8.js',function(){
+    hljs.tabReplace = '  ';
+    hljs.initHighlightingOnLoad();
+});
+</script>
+<script src="./js/demo.js"></script>
+<link rel="stylesheet" href="./css/theme.moon.css">
+</body>
+</html>
