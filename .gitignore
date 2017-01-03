@@ -163,5 +163,15 @@ pip-log.txt
 #Mr Developer
 .mr.developer.cfg
 
-# Mac crap
+############
+## Mac OSX
+############
+
 .DS_Store
+
+
+############
+## NodeJs
+############
+
+node_modules/
